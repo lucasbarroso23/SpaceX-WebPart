@@ -2,8 +2,8 @@
 
 * {
   margin: 0;
-  padding: 0;
   border: 0;
+  padding: 0;
 }
 
 .spaceX {
@@ -14,6 +14,36 @@
   }
 
   .row {
-    background-image: linear-gradient(135deg, #d4ebfa 10%, #899ed8 100%);
+    color: $ms-color-themeDark;
+    background-color: #f8f8f8;
+  }
+
+  .column {
+    width: 100%;
+  }
+
+  .title {
+    @include ms-font-xl;
+    @include ms-fontColor-white;
+  }
+
+  .subTitle {
+    @include ms-font-l;
+    @include ms-fontColor-white;
+  }
+
+  .description {
+    @include ms-font-l;
+    @include ms-fontColor-white;
+  }
+
+  .label {
+    font-weight: $ms-font-weight-semibold;
+    font-size: $ms-font-size-m;
+    height: 32px;
+    line-height: 32px;
+    margin: 0 4px;
+    vertical-align: top;
+    display: inline-block;
   }
 }

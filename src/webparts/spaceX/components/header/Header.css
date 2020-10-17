@@ -6,7 +6,6 @@
 
 .custom-shape-divider-bottom-1602856033 {
   position: absolute;
-  bottom: 0;
   top: 0;
   left: 0;
   width: 100%;
@@ -23,7 +22,7 @@
 }
 
 .custom-shape-divider-bottom-1602856033 .shape-fill {
-  fill: #ffffff;
+  fill: #005288;
 }
 
 .image-wrap {
