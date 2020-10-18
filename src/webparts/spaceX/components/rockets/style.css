@@ -54,10 +54,11 @@ li.dev-item a {
   color: white;
   font-size: 14px;
   text-decoration: none;
+  margin-top: 8px;
   transition: all 0.6s;
 }
 
 li.dev-item a:hover {
-  background-color: rgba(0, 82, 136, 0.5);
+  background-color: rgba(0, 82, 136, 0.8);
   color: white;
 }

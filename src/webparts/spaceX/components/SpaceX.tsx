@@ -2,12 +2,13 @@ import * as React from "react";
 import styles from "./SpaceX.module.scss";
 import { ISpaceXProps } from "./ISpaceXProps";
 import axios from "axios";
-import { IDevState } from "./rockets/IDevState";
+import { ISpaceState } from "./rockets/ISpaceState";
 import { Header } from "./header/Header";
-import DevItem from "./rockets/DevItem";
+import SpaceItem from "./rockets/SpaceItem";
+import { useState } from "react";
 
-export default class SpaceX extends React.Component<ISpaceXProps, IDevState> {
-  public constructor(props: ISpaceXProps, state: IDevState) {
+export default class SpaceX extends React.Component<ISpaceXProps, ISpaceState> {
+  public constructor(props: ISpaceXProps, state: ISpaceState) {
     super(props);
     this.state = {
       items: [
@@ -24,6 +25,7 @@ export default class SpaceX extends React.Component<ISpaceXProps, IDevState> {
 
   public componentDidMount() {
     var reactHandler = this;
+
     axios
       .get(`https://api.spacexdata.com/v3/rockets`)
       .then((response) => {
@@ -47,7 +49,7 @@ export default class SpaceX extends React.Component<ISpaceXProps, IDevState> {
               <Header />
               <ul>
                 {this.state.items.map((rocket) => (
-                  <DevItem key={rocket.rocket_id} rocket={rocket} />
+                  <SpaceItem key={rocket.rocket_id} rocket={rocket} />
                 ))}
               </ul>
             </div>

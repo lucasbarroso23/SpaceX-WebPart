@@ -1,4 +1,4 @@
-export interface IDevState {
+export interface ISpaceState {
   items: [
     {
       rocket_id: "";

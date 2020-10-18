@@ -1,7 +1,7 @@
 import * as React from "react";
 import "./style.css";
 
-function DevItem(props) {
+function SpaceItem(props) {
   const { rocket } = props;
   const img = rocket.flickr_images[0];
 
@@ -27,4 +27,4 @@ function DevItem(props) {
   );
 }
 
-export default DevItem;
+export default SpaceItem;
