@@ -5,9 +5,9 @@ function SpaceItem(props) {
   const { ship } = props;
 
   return (
-    <li className="dev-item">
-      <header>       
-         {ship.image ? (
+    <li className="space-item">
+      <header>
+        {ship.image ? (
           <img src={ship.image} alt={ship.ship_id} />
         ) : (
           <img
@@ -15,9 +15,8 @@ function SpaceItem(props) {
             alt={ship.ship_id}
           />
         )}
-        
 
-        <div className="user-info">
+        <div className="info">
           <strong>{ship.ship_name}</strong>
           <p>{ship.type}</p>
           <p>{ship.home_port}</p>
@@ -25,7 +24,7 @@ function SpaceItem(props) {
           <p>Weight: {ship.weight_kg}kg</p>
         </div>
       </header>
-      <a href={ship.url}>Mais informações</a>
+      <a href={ship.url}>More information</a>
       <p></p>
     </li>
   );
