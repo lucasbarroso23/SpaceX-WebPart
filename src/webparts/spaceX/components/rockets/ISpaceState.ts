@@ -8,4 +8,5 @@ export interface ISpaceState {
       wikipedia: "";
     }
   ];
+  query: "";
 }
