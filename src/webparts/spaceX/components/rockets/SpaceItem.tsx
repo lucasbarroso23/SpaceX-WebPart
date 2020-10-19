@@ -2,26 +2,30 @@ import * as React from "react";
 import "./style.css";
 
 function SpaceItem(props) {
-  const { rocket } = props;
-  const img = rocket.flickr_images[0];
+  const { ship } = props;
 
   return (
     <li className="dev-item">
-      <header>
-        {img ? (
-          <img src={img} alt={rocket.rocket_id} />
+      <header>       
+         {ship.image ? (
+          <img src={ship.image} alt={ship.ship_id} />
         ) : (
           <img
-            src="https://c.files.bbci.co.uk/1001B/production/_113836556_mediaitem113836552.jpg"
-            alt={rocket.rocket_id}
+            src="https://media-exp1.licdn.com/dms/image/C510BAQGFPKF9SNeb4g/company-logo_200_200/0?e=2159024400&v=beta&t=KwT2Dj6PcVQxW0tq_dhU_CUjmaAgoHbwqIo0SG1ChYs"
+            alt={ship.ship_id}
           />
         )}
+        
+
         <div className="user-info">
-          <strong>{rocket.rocket_name}</strong>
-          <p>{rocket.description}</p>
+          <strong>{ship.ship_name}</strong>
+          <p>{ship.type}</p>
+          <p>{ship.home_port}</p>
+          <p>Built in {ship.year_built}</p>
+          <p>Weight: {ship.weight_kg}kg</p>
         </div>
       </header>
-      <a href={rocket.wikipedia}>Mais informações</a>
+      <a href={ship.url}>Mais informações</a>
       <p></p>
     </li>
   );

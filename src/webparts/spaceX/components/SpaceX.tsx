@@ -14,11 +14,14 @@ export default class SpaceX extends React.Component<ISpaceXProps, ISpaceState> {
     this.state = {
       items: [
         {
-          rocket_id: "",
-          rocket_name: "",
-          flickr_images: [],
-          description: "",
-          wikipedia: "",
+          ship_id: "",
+          ship_name: "",
+          ship_type: "",
+          image: "",
+          home_port: "",
+          year_built: "",
+          weight_kg: "",
+          url: "",
         },
       ],
       query: "",
@@ -27,9 +30,8 @@ export default class SpaceX extends React.Component<ISpaceXProps, ISpaceState> {
 
   public componentDidMount() {
     var reactHandler = this;
-    //const query = this.state.query;
     axios
-      .get(`https://api.spacexdata.com/v3/rockets`)
+      .get(`https://api.spacexdata.com/v3/ships`)
       .then((response) => {
         // handle success
         reactHandler.setState({
@@ -46,7 +48,9 @@ export default class SpaceX extends React.Component<ISpaceXProps, ISpaceState> {
     if (this.state.query !== "") {
       var reactHandler = this;
       axios
-        .get(`https://api.spacexdata.com/v3/rockets?limit=${this.state.query}`)
+        .get(
+          `https://api.spacexdata.com/v3/ships?ship_name=${this.state.query}`
+        )
         .then((response) => {
           // handle success
           reactHandler.setState({
@@ -55,24 +59,36 @@ export default class SpaceX extends React.Component<ISpaceXProps, ISpaceState> {
         })
         .catch((error) => {
           // handle error
-          console.log(error);
+          console.log(error); 
         });
     } else {
-      return;
+       var reactHandler = this;
+    axios
+      .get(`https://api.spacexdata.com/v3/ships`)
+      .then((response) => {
+        // handle success
+        reactHandler.setState({
+          items: response.data,
+        });
+      })
+      .catch((error) => {
+        // handle error
+        console.log(error); 
+      });
     }
   };
 
-  public render(): React.ReactElement<ISpaceXProps> {
+  public render(): React.ReactElement<ISpaceXProps> { 
     return (
       <div className={styles.spaceX}>
         <div className={styles.container}>
           <div className={styles.row}>
             <div className={styles.column}>
               <Header />
-              <Search getQuery={(q) => this.setState({ query: q })} />
+              <Search getQuery={(q) => this.setState({ query: q })} /> 
               <ul>
-                {this.state.items.map((rocket) => (
-                  <SpaceItem key={rocket.rocket_id} rocket={rocket} />
+                {this.state.items.map((ship) => (
+                  <SpaceItem key={ship.ship_id} ship={ship} />
                 ))}
               </ul>
             </div>

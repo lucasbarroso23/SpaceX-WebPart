@@ -6,10 +6,26 @@ input[type="text"] {
   display: block;
   padding: 10px;
   font-size: 20px;
-  border: 0;
-  border-radius: 5px;
   width: 60%;
   margin: auto;
-  border: 1px solid rgba(189, 224, 247, 0.8);
+  border-bottom: 1px solid rgba(0, 82, 136, 0.8);
   margin-top: 20px;
+  transition: all 0.7s;
+}
+
+input[type="text"]:focus {
+  outline: none;
+}
+
+input[type="text"]:hover {
+  transform: scale(1.1);
+}
+
+input::-webkit-input-placeholder {
+  color: grey;
+  transition: all 1s;
+}
+
+input:focus::-webkit-input-placeholder {
+  opacity: 0;
 }

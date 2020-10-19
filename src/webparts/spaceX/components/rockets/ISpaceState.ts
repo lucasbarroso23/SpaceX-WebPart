@@ -1,11 +1,14 @@
 export interface ISpaceState {
   items: [
     {
-      rocket_id: "";
-      rocket_name: "";
-      flickr_images: [];
-      description: "";
-      wikipedia: "";
+      ship_id: "";
+      ship_name: "";
+      ship_type: "";
+      image: "";
+      home_port: "";
+      year_built: "";
+      weight_kg: "";
+      url: "";
     }
   ];
   query: "";

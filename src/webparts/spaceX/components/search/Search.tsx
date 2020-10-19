@@ -17,10 +17,9 @@ export const Search = ({ getQuery }) => {
         <input
           type="text"
           className="form-control"
-          placeholder="Search rockets"
+          placeholder="Search Ships" 
           value={text}
-          onChange={(e) => onChange(e.target.value)}
-          autoFocus
+          onChange={(e) => onChange(e.target.value)}  
         />
       </form>
     </section>
