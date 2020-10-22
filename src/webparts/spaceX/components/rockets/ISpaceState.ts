@@ -12,4 +12,5 @@ export interface ISpaceState {
     }
   ];
   query: "";
+  selectedImg: null;
 }

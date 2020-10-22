@@ -17,6 +17,7 @@ li.space-item header img {
   width: 180px;
   height: 135px;
   margin-right: 10px;
+  cursor: pointer;
 }
 
 li.space-item header .info {
