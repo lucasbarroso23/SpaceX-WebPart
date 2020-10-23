@@ -30,7 +30,6 @@ function SpaceItem({ ship, setSelectedImg }) {
       <a href={ship.url} target="_blank">
         More information
       </a>
-      <p></p>
     </li>
   );
 }

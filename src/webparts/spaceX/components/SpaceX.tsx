@@ -31,19 +31,19 @@ export default class SpaceX extends React.Component<ISpaceXProps, ISpaceState> {
   }
 
   public componentDidMount() {
-    var reactHandler = this;
+    const reactHandler = this;
     Api.apiCall(reactHandler);
   }
 
   public componentDidUpdate = () => {
-    var reactHandler = this;
+    const reactHandler = this;
     this.state.query
       ? Api.apiNameCall(reactHandler, this.state.query)
       : Api.apiCall(reactHandler);
   };
 
   public handleImg = (image) => {
-    var reactHandle = this;
+    const reactHandle = this;
 
     reactHandle.setState({
       selectedImg: image,
